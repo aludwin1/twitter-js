@@ -14,8 +14,26 @@
     <div class="col-md-9">
     
       <!-- display tweets here -->
+      {% if showForm %}
+        <form action="/tweets" method="POST">
+          <label for="name_field">Name:</label>
+          <input name="name" type="text" id="name_field" />
+
+          <label for="text_field">Text:</label>
+          <input name="content" type="text" id="text_field" style="width: 350px;" />
+
+          <input type="submit" value="Submit" />
+        </form>
+      {% endif %}
+      
       {% for tweet in tweets %}
-        <li>{{tweet.content}}</li>
+      <div class = "tweetbox">
+        <a href = "/users/{{tweet.name}}"><img> </a>
+        <div><b>{{tweet.name}}</b></div>
+        <div>{{tweet.content}} </div></li>
+        <div><a href = "">Re-tweet</a></div>
+        <br>
+      </div>
       {% endfor %}
       
     </div>

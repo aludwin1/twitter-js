@@ -46,6 +46,7 @@ code {
 }
 
 .tweetbox img {
+  padding-right: 7px;
   float: left;
   height: 48px;
   width: 48px;
